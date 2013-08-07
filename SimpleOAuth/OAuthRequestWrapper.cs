@@ -241,7 +241,7 @@ namespace SimpleOAuth
         {
 
             var method = ContainedRequest.Method;
-            var baseUrl = String.Format("{0}://{1}{2}", ContainedRequest.RequestUri.Scheme, ContainedRequest.RequestUri.Host, ContainedRequest.RequestUri.AbsolutePath);
+            var baseUrl = String.Format("{0}://{1}{2}", ContainedRequest.RequestUri.Scheme, ContainedRequest.RequestUri.Authority, ContainedRequest.RequestUri.AbsolutePath);
 
             var parameters = new SortedDictionary<string, string>(AuthorizationHeader);
             var queryParams = UrlHelper.ParseQueryString(ContainedRequest.RequestUri.Query);
